@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# run artefacts
+logs/
+analysis_output/
+rq1_perturbations/
+*.log
+*.out
+*.err
+
+# data and derived stores
+*.pkl
+daic_woz_data/
+
+# environment
+.conda/
+.venv/
