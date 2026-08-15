@@ -2,11 +2,13 @@
 
 Code for evaluating an LLM pipeline that scores the PHQ-8 from clinical interviews, by changing only what the pipeline reads and recording what it returns. The pipeline itself is the [AI Psychiatrist Assistant](https://github.com/trendscenter/ai-psychiatrist) and its internal logic is not modified.
 
+The experiments cover five things: reproducing the released pipeline, running it on other backbone models, rewording the transcript, injecting text into the input, and reading the confidence it reports.
+
 ## Environment Setup
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/divzyy/llm-depression-trust-eval.git
 ```
 
 2. Create the conda environment from the provided [`environment.yml`](environment.yml) file:
@@ -28,7 +30,7 @@ export OLLAMA_HOME=$HOME/ollama-018
 export OLLAMA_MODELS=$HOME/ollama/models
 ```
 
-5. Create the log directory:
+5. Create the log directory. SLURM does not create it and will fail without it:
 ```bash
 mkdir -p $AIPSY_ROOT/logs
 ```
@@ -123,7 +125,7 @@ Results are written to `analysis_output/` and generated transcripts to `rq1_pert
 
 - [Ollama documentation](https://github.com/ollama/ollama)
 
-- [DAIC-WOZ](https://dcapswoz.ict.usc.edu/), distributed by USC ICT under its own licence.
+- [DAIC-WOZ](https://dcapswoz.ict.usc.edu/), distributed by USC ICT under its own licence and not redistributed here.
 
 ## Citation
 
